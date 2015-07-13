@@ -441,17 +441,18 @@
   // Render static widgets after the document finishes loading
   // Statically render all elements that are of this widget's class
   window.HTMLWidgets.staticRender = function() {
+    console.log("this function has RUN");
     var bindings = window.HTMLWidgets.widgets || [];
     forEach(bindings, function(binding) {
       var matches = binding.find(document.documentElement);
       forEach(matches, function(el) {
         var sizeObj = initSizing(el, binding);
+        console.log("testing it out, this is the sizeObj's height" + sizeObj.getHeight() + "\nThis ithe el.offsetHeight" + el.offsetHeight);
 
         if (hasClass(el, "html-widget-static-bound"))
           return;
         el.className = el.className + " html-widget-static-bound";
 
-        console.log("testing it out, this is the sizeObj's height" + sizeObj.getHeight() + "\nThis ithe el.offsetHeight" + el.offsetHeight);
 
         var initResult;
         if (binding.initialize) {
