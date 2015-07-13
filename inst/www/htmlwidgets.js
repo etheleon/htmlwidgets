@@ -451,6 +451,8 @@
           return;
         el.className = el.className + " html-widget-static-bound";
 
+        console.log("testing it out, this is the sizeObj's height" + sizeObj.getHeight() + "\nThis ithe el.offsetHeight" + el.offsetHeight);
+
         var initResult;
         if (binding.initialize) {
           initResult = binding.initialize(el,

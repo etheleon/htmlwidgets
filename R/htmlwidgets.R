@@ -54,6 +54,8 @@ toHTML <- function(x, standalone = FALSE, knitrOptions = NULL) {
   w <- validateCssUnit(sizeInfo$width)
   h <- validateCssUnit(sizeInfo$height)
 
+  print(sprintf("the height is %s", h))
+
   # create a style attribute for the width and height
   style <- paste(
     "width:", w, ";",
@@ -69,6 +71,8 @@ toHTML <- function(x, standalone = FALSE, knitrOptions = NULL) {
   } else {
     identity
   }
+
+  print(sprintf("the height is %s", sizeInfo$height))
 
   html <- htmltools::tagList(
     container(
